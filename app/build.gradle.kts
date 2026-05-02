@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -41,6 +43,31 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    /*   ROOM (DATABASE)   */
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    /*   RETROFIT   */
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    /*   DAGGER-HILT   */
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    /*   COROUTINES   */
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    /*   SCOPES   */
+    implementation(libs.androidx.lifecycle.viewmodel.ktx) // (viewModelScope)
+    implementation(libs.androidx.lifecycle.runtime.ktx) // (lifecycleScope)
+    /*   FRAGMENT NAVIGATION   */
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    implementation("androidx.fragment:fragment-ktx:1.8.9") // Fragment
+    implementation("androidx.recyclerview:recyclerview:1.4.0") // RecycleView
+    implementation("androidx.cardview:cardview:1.0.0") // CardView
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
