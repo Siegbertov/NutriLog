@@ -64,9 +64,9 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-    implementation("androidx.fragment:fragment-ktx:1.8.9") // Fragment
-    implementation("androidx.recyclerview:recyclerview:1.4.0") // RecycleView
-    implementation("androidx.cardview:cardview:1.0.0") // CardView
+    implementation(libs.androidx.fragment.ktx) // Fragment
+    implementation(libs.androidx.recyclerview) // RecycleView
+    implementation(libs.androidx.cardview) // CardView
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
